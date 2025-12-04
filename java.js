@@ -5,32 +5,26 @@
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
  
-           // Текущий индекс
         let currentIndex = 0;
-        
-        // Функция для обновления изображения
+              
         function updateImage() {
             carouselImage.src = images[currentIndex];
             currentCounter.textContent = currentIndex + 1;
         }
         
-        // Функция для следующего изображения
-        function nextImage() {
+       function nextImage() {
             currentIndex = (currentIndex + 1) % images.length;
             updateImage();
         }
         
-        // Функция для предыдущего изображения
         function prevImage() {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             updateImage();
         }
         
-        // Добавляем обработчики событий
         nextBtn.addEventListener('click', nextImage);
         prevBtn.addEventListener('click', prevImage);
         
-        // Дополнительно: поддержка клавиш управления
         document.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowRight') {
                 nextImage();
@@ -39,4 +33,5 @@
             }
         });
         
+
        
